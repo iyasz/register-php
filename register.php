@@ -2,6 +2,18 @@
 
 $conn = mysqli_connect('localhost', 'root', '', 'db_logintest');
 
+if(isset($_POST['btn-register'])){
+    $nama = htmlspecialchars($_POST['nama']);
+    $username = htmlspecialchars($_POST['username']);
+    $password = htmlspecialchars($_POST['password']);
+    
+    if($nama == "" or $username == "" or $password == ""){
+        $alert = "Masukan Data Dengan Lengkap";
+    } else {
+        mysqli_query($conn, "insert into tbl_admin (nama, username, password) VALUES ($nama, $username, $password) ");
+    }
+}
+
 ?>
 
 <!doctype html>
@@ -30,7 +42,9 @@ $conn = mysqli_connect('localhost', 'root', '', 'db_logintest');
                                 <label for="">Nama</label>
                                 <input type="password" name="password" placeholder="Masukan Password Anda" class="form-control">
                                 <span>
-                                    <p></p>
+                                    <p><?php if(isset($alert)){
+                                        echo $alert;
+                                    } ?></p>
                                 </span>
                                 <div class="but">
                                     <button class="btn btn-primary" type="submit" name="btn-register">Register</button>
