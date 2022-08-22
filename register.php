@@ -10,7 +10,7 @@ if(isset($_POST['btn-register'])){
     if($nama == "" or $username == "" or $password == ""){
         $alert = "Masukan Data Dengan Lengkap";
     } else {
-        mysqli_query($conn, "insert into tbl_admin (nama, username, password) VALUES ($nama, $username, $password) ");
+        mysqli_query($conn, "insert into tbl_admin (nama, username, password) VALUES ('$nama', '$username', '$password's) ");
     }
 }
 
@@ -21,10 +21,17 @@ if(isset($_POST['btn-register'])){
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
   </head>
   <body>
+    <style>
+        .form-regis span{
+            height: 16px;
+        }
+
+    </style>
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-5">
@@ -34,7 +41,7 @@ if(isset($_POST['btn-register'])){
                             <h1>Register</h1>
                         </div>
                         <form action="" method="post">
-                            <div class="">
+                            <div class="form-regis">
                                 <label for="">Nama</label>
                                 <input type="text" name="nama" placeholder="Masukan Nama Anda" class="form-control">
                                 <label for="">Username</label>
