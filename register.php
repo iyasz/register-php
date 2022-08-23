@@ -28,6 +28,11 @@ if (isset($_POST['btn-register'])) {
 
 <body>
     <style>
+        .header h1 {
+            font-size: 25px;
+            font-weight: lighter;
+            font-family: sans-serif;
+        }
         .form-regis span {
             height: 16px;
         }
@@ -43,6 +48,9 @@ if (isset($_POST['btn-register'])) {
             font-family: sans-serif;
             letter-spacing: 0.5px;
         }
+        .form-regis input {
+            margin-bottom: 12px;
+        }
     </style>
 
     <div class="container mt-5">
@@ -51,7 +59,8 @@ if (isset($_POST['btn-register'])) {
                 <div class="card shadow-lg pb-4">
                     <div class="card-body">
                         <div class="header text-center">
-                            <h1>Register</h1>
+                            <p class="my-2"> <img src="avatar.svg" width="90px" alt=""></p>
+                            <h1 class="mt-4">Silahkan Register </h1>
                         </div>
                         <form action="" method="post">
                             <div class="form-regis">
@@ -67,7 +76,7 @@ if (isset($_POST['btn-register'])) {
                                         } ?></p>
                                 </span>
                                 <div class="but text-center">
-                                    <button class="btn btn-primary reg" type="submit" name="btn-register">Register</button>
+                                    <button class="btn btn-primary mt-2 reg" type="submit" name="btn-register">Register</button>
                                 </div>
                             </div>
                         </form>
