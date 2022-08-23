@@ -24,6 +24,7 @@ if (isset($_POST['btn-register'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
 
 <body>
@@ -33,8 +34,12 @@ if (isset($_POST['btn-register'])) {
             font-weight: lighter;
             font-family: sans-serif;
         }
-        .form-regis span {
-            height: 16px;
+        .form-regis .alrt p {
+            height: 30px;
+            font-size: 14px;
+            color: red;
+            position: relative;
+            top: -8px;
         }
 
         .reg {
@@ -65,16 +70,16 @@ if (isset($_POST['btn-register'])) {
                         <form action="" method="post">
                             <div class="form-regis">
                                 <label for="">Nama</label>
-                                <input type="text" name="nama" placeholder="Masukan Nama Anda" class="form-control">
+                                <input type="text" name="nama" placeholder="Masukan Nama Anda" class="form-control" required>
                                 <label for="">Username</label>
                                 <input type="text" name="username" placeholder="Masukan Username Anda" class="form-control">
                                 <label for="">Password</label>
                                 <input type="password" name="password" placeholder="Masukan Password Anda" class="form-control">
-                                <span>
+                                <div class="alrt">
                                     <p><?php if (isset($alert)) {
                                             echo $alert;
                                         } ?></p>
-                                </span>
+                                </div>
                                 <div class="but text-center">
                                     <button class="btn btn-primary mt-2 reg" type="submit" name="btn-register">Register</button>
                                 </div>
